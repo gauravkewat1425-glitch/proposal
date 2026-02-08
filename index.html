@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wify 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #ffb6c1, #ffdde1);
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  animation: fadeIn 2s;
+}
+
+p {
+  font-size: 1.05rem;
+  max-width: 320px;
+  animation: fadeIn 3s;
+}
+
+.anime-pic {
+  width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin: 20px 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+.heart {
+  font-size: 70px;
+  animation: heartbeat 1.5s infinite;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #ff4b5c;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #ffe6ea;
+}
+
+#proposal {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 2s;
+}
+
+.floating-hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp 6s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music (plays after tap – mobile safe) -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_8f3b3f6a8c.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h1>Hey Wify 💕</h1>
+
+  <p>
+    Every moment with you feels like a beautiful anime scene —
+    soft, magical, and full of love.
+  </p>
+
+  <!-- CHANGE IMAGE LINK IF YOU WANT -->
+  <img 
+    src="https://i.imgur.com/9QZ7ZQZ.png"
+    alt="Anime Couple"
+    class="anime-pic"
+  >
+
+  <div class="heart">❤️</div>
+
+  <button onclick="showProposal()">Tap Here 💌</
