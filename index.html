@@ -3,184 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Baby ❤️</title>
+<title>Happy Birthday MADAM JI 🎉</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  overflow: hidden;
+  color: white;
 }
 
-body{
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-background:radial-gradient(circle at top,#ff758c,#ff4e50);
+h1 {
+  margin-top: 60px;
+  font-size: 3rem;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Floating Blur Hearts */
-.heart{
-position:absolute;
-color:#fff;
-opacity:0.6;
-animation:float 8s linear infinite;
-filter:blur(1px);
-}
-@keyframes float{
-0%{transform:translateY(100vh) scale(0.5);opacity:0;}
-20%{opacity:0.8;}
-100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff4e50;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
 }
 
-/* Container */
-.container{
-text-align:center;
-color:white;
-z-index:10;
+button:hover {
+  transform: scale(1.1);
 }
 
-h1{
-font-size:28px;
-margin-bottom:10px;
-text-shadow:0 0 20px rgba(255,255,255,0.8);
+#message {
+  display: none;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-button{
-padding:12px 25px;
-margin:10px;
-border:none;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
-transition:all 0.3s ease;
+/* Cake */
+.cake {
+  position: relative;
+  margin: 40px auto;
+  width: 200px;
+  height: 200px;
 }
 
-.yes{
-background:white;
-color:#ff4e50;
-box-shadow:0 0 20px rgba(255,255,255,0.6);
-}
-.yes:hover{
-transform:scale(1.1);
-}
-
-.no{
-background:#222;
-color:white;
-}
-.no:hover{
-transform:translateX(5px);
+.layer {
+  width: 200px;
+  height: 60px;
+  background: #ffcc70;
+  border-radius: 10px;
+  margin-top: 5px;
 }
 
-/* Envelope */
-.scene{
-perspective:1000px;
-margin-top:30px;
+.icing {
+  width: 200px;
+  height: 30px;
+  background: #fff;
+  border-radius: 10px 10px 0 0;
 }
 
-.envelope{
-width:320px;
-height:220px;
-position:relative;
-transform-style:preserve-3d;
-transition:transform 1s ease;
-display:none;
+.candle {
+  width: 10px;
+  height: 40px;
+  background: red;
+  margin: 0 auto;
+  position: relative;
 }
 
-.body{
-position:absolute;
-width:100%;
-height:100%;
-background:white;
-border-radius:12px;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
+.flame {
+  width: 15px;
+  height: 15px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: -2px;
+  animation: flicker 0.3s infinite alternate;
 }
 
-.flap{
-position:absolute;
-width:100%;
-height:100%;
-background:#ff4e50;
-clip-path:polygon(0 0, 50% 60%, 100% 0);
-transform-origin:top;
-transition:transform 1s ease;
-border-radius:12px;
+@keyframes flicker {
+  from { transform: scale(1); opacity: 1;}
+  to { transform: scale(1.2); opacity: 0.7;}
 }
 
-.message{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-text-align:center;
-font-size:18px;
-color:#ff4e50;
-opacity:0;
-transform:translateY(20px);
-transition:all 1s ease;
+/* Cut animation */
+.cut {
+  animation: cutCake 2s forwards;
 }
-.open .flap{
-transform:rotateX(180deg);
+
+@keyframes cutCake {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(10deg) translateX(20px); }
 }
-.open .message{
-opacity:1;
-transform:translateY(0);
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 60px;
+  border-radius: 50%;
+  animation: float 10s infinite ease-in;
+}
+
+.balloon:nth-child(1){ left:10%; background:#ff4e50;}
+.balloon:nth-child(2){ left:30%; background:#f9d423;}
+.balloon:nth-child(3){ left:50%; background:#24c6dc;}
+.balloon:nth-child(4){ left:70%; background:#e056fd;}
+.balloon:nth-child(5){ left:90%; background:#1dd1a1;}
+
+@keyframes float {
+  from {transform: translateY(0);}
+  to {transform: translateY(-110vh);}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>Bacha ❤️</h1>
-<p>Will you be my Valentine? 💕</p>
+<h1>🎉 Happy Birthday MADAM JI 🎂</h1>
 
-<button class="yes" onclick="openEnvelope()"> Yes 💖</button>
-<button class="no" onclick="alert('No button disabled 😜')">No 😆</button>
-
-<div class="scene">
-<div class="envelope" id="envelope">
-<div class="body"></div>
-<div class="flap"></div>
-<div class="message">
-Yayyyy 💍💖<br><br>
-You are mine forever ❤️✨
-</div>
-</div>
+<div class="cake" id="cake">
+  <div class="candle">
+    <div class="flame" id="flame"></div>
+  </div>
+  <div class="icing"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
 </div>
 
+<button onclick="cutCake()">Cut the Cake 🎂</button>
+
+<div id="message">
+  💖 Wishing you endless happiness, success & love MADAM JI 💖<br>
+  May all your dreams come true ✨🎁
 </div>
+
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
+</audio>
+
+<!-- Balloons -->
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
 
 <script>
-
-/* Ultra Smooth Floating Hearts */
-setInterval(()=>{
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*25+15)+"px";
-heart.style.animationDuration=(Math.random()*4+4)+"s";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),8000);
-},400);
-
-/* Open Envelope Animation */
-function openEnvelope(){
-const env=document.getElementById("envelope");
-env.style.display="block";
-setTimeout(()=>{
-env.classList.add("open");
-},100);
+function cutCake() {
+  document.getElementById("cake").classList.add("cut");
+  document.getElementById("flame").style.display = "none";
+  document.getElementById("message").style.display = "block";
+  document.getElementById("music").play();
 }
-
 </script>
 
 </body>
